@@ -14,7 +14,9 @@ struct ContentView: View {
             VStack(alignment: .center,spacing: 20) {
                 ScrollView(.horizontal,showsIndicators: false){
                     HStack(alignment: .top,spacing: 0) {
-                        HeaderView()
+                        ForEach(headersData) { header in
+                            HeaderView(header: header)
+                        }
                     }
                 }
                 
