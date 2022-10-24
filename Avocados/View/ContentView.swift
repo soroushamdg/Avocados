@@ -28,6 +28,22 @@ struct ContentView: View {
                     .frame(maxWidth: 640)
                 
                 
+                Text("Avocado Facts")
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
+                
+                ScrollView(.horizontal,showsIndicators: false){
+                    HStack(alignment: .top,spacing: 60) {
+                        ForEach(factsData) { item in
+                            FactsView(fact: item)
+                        }
+                    }
+                    .padding(.vertical)
+                    .padding(.leading,60)
+                    .padding(.trailing,20)
+                }
+                
+                
                 VStack(alignment: .center,spacing: 20){
                     Text("All about Avocados")
                         .modifier(TitleModifier())
