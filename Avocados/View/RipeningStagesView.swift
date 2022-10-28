@@ -9,7 +9,21 @@ import SwiftUI
 
 struct RipeningStagesView: View {
     var body: some View {
-        Text("RipeningStagesView")
+        ScrollView(.horizontal,showsIndicators: false){
+            VStack{
+                Spacer()
+                HStack(alignment: .center,spacing: 25) {
+                    ForEach(ripeningData) { item in
+                        
+                        RipeningView(ripening: item)
+                    }
+                }
+                .padding(.vertical)
+                .padding(.horizontal,25)
+                
+                Spacer()
+            }
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 
